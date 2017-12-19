@@ -1,0 +1,8 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.4.0",
+    "libraryName": "jquery-webpart",
+    "libraryId": "7a3de1ba-ec8c-4d26-9c83-4ed4fe6ff0bd",
+    "environment": "onprem"
+  }
+}
