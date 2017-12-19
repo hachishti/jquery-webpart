@@ -26,22 +26,8 @@ export default class JQueryWebPart extends BaseClientSideWebPart<IJQueryWebPartP
   }
 
   public render(): void {
-    // this.domElement.innerHTML = `
-    //   <div class="${ styles.jQuery }">
-    //     <div class="${ styles.container }">
-    //       <div class="${ styles.row }">
-    //         <div class="${ styles.column }">
-    //           <span class="${ styles.title }">Welcome to SharePoint!</span>
-    //           <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
-    //           <p class="${ styles.description }">${escape(this.properties.description)}</p>
-    //           <a href="https://aka.ms/spfx" class="${ styles.button }">
-    //             <span class="${ styles.label }">Learn more</span>
-    //           </a>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </div>`;
     this.domElement.innerHTML = MyAccordionTemplate.templateHtml;
+  
     const accordionOptions: JQueryUI.AccordionOptions = {
       animate: true,
       collapsible: false,
@@ -50,12 +36,14 @@ export default class JQueryWebPart extends BaseClientSideWebPart<IJQueryWebPartP
         activeHeader: 'ui-icon-circle-arrow-s'
       }
     };
-    jQuery('.accordian', this.domElement).accordion(accordionOptions);
+  
+    jQuery('.accordion', this.domElement).accordion(accordionOptions);
   }
 
   protected get dataVersion(): Version {
     return Version.parse('1.0');
   }
+
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
